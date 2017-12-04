@@ -24,7 +24,7 @@ function get_access(accessToken, refreshToken, profile, done) {
 passport.use(new GitHubStrategy({
   clientID: creds.client_id,
   clientSecret: creds.client_secret,
-  callbackURL: creds.callback_url
+  callbackURL: "http://127.0.0.1:3000/auth/github/callback"
 }, get_access))
 
 module.exports = passport;
