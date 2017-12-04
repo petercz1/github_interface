@@ -2,7 +2,6 @@ var express = require('express');
 var backend_app = express();
 var bodyParser = require('body-parser');
 var routes = require('./routes/main_routes');
-var passport = require('./mongodb/passport');
 var port = 4000;
 
 backend_app.set('view engine', 'ejs');
