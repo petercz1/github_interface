@@ -8,7 +8,7 @@ function do_login_controller($scope, $http, $routeParams, $location) {
     $http.get('/api/v1/auth').then(
         function (result) {
             console.log(result);
-            $location.path()
+            $location.path('logged_in');
         }
     )
 }

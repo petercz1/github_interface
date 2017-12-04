@@ -10,5 +10,5 @@ function do_routes($routeProvider) {
       templateUrl: 'partials/home.html',
       controller: 'home_controller'
     }
-  );
+  ).when;
 }
