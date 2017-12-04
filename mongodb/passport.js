@@ -1,6 +1,8 @@
 var passport = require('passport');
 var GitHubStrategy = require('passport-github2').Strategy;
-var creds = require('./creds');
+var creds = require('./creds.js');
+console.log('');
+console.log(creds.client_id);
 
 var git_creds = {
   clientID: creds.client_id,
