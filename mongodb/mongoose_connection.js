@@ -8,6 +8,8 @@ mongoose.connect(url, {
 
 var git_doc = {
   user: String,
+  repository_url: String,
+  
 
 }
 
