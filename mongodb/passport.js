@@ -8,8 +8,6 @@ var git_creds = {
   callbackURL: creds.callback_url
 };
 
-var git_strategy = new GitHubStrategy(git_creds, get_access);
-
 function get_access(accessToken, refreshToken, profile, done) {
   console.log('getting access');
   console.log(profile);
@@ -19,6 +17,8 @@ function get_access(accessToken, refreshToken, profile, done) {
     return done(err, user);
   });
 }
+var git_strategy = new GitHubStrategy(git_creds, get_access);
+
 
 passport.use(git_strategy);
 
