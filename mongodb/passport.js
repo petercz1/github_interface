@@ -11,11 +11,7 @@ var git_creds = {
 function get_access(accessToken, refreshToken, profile, done) {
   console.log('getting access');
   console.log(profile);
-  User.findOrCreate({
-    githubId: profile.id
-  }, function (err, user) {
-    return done(err, user);
-  });
+  return done();
 }
 
 var git_strategy = new GitHubStrategy(git_creds, get_access);
