@@ -1,8 +1,6 @@
 var passport = require('passport');
 var GitHubStrategy = require('passport-github2').Strategy;
 var creds = require('./creds.js');
-console.log('');
-console.log(creds.client_id);
 
 var git_creds = {
   clientID: creds.client_id,
@@ -20,13 +18,8 @@ function get_access(accessToken, refreshToken, profile, done) {
   });
 }
 
-//var git_strategy = new GitHubStrategy(git_creds, get_access);
+var git_strategy = new GitHubStrategy(git_creds, get_access);
 
-//passport.use(git_strategy);
-passport.use(new GitHubStrategy({
-  clientID: creds.client_id,
-  clientSecret: creds.client_secret,
-  callbackURL: "http://127.0.0.1:3000/auth/github/callback"
-}, get_access))
+passport.use(git_strategy);
 
 module.exports = passport;
