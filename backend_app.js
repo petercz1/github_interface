@@ -1,7 +1,7 @@
 var express = require('express');
 var backend_app = express();
 var bodyParser = require('body-parser');
-var routes = require('./routes/main_routes');
+var routes = require('./routes/backend_routes');
 var port = 4000;
 
 //backend_app.set('view engine', 'ejs');
