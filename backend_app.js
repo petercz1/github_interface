@@ -4,7 +4,7 @@ var bodyParser = require('body-parser');
 var routes = require('./routes/main_routes');
 var port = 4000;
 
-backend_app.set('view engine', 'ejs');
+//backend_app.set('view engine', 'ejs');
 backend_app.use(express.static('public'));
 backend_app.use(bodyParser.urlencoded({extended: true}));
 backend_app.use(bodyParser.json());

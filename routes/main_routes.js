@@ -6,7 +6,7 @@ router.get('/', do_homepage);
 
 function do_homepage(req, res) {
   console.log('doing homepage');
-  res.render('index');
+  res.sendfile('index');
 }
 
 // auth
