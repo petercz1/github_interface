@@ -17,11 +17,12 @@ router.get('/api/v1/auth', passport.authenticate('github', {
 router.get('/api/v1/git_callback',
   passport.authenticate('github', {
     failureRedirect: '/login'
-  }), do_authorized
-  function (req, res) {
-    console.log('authenticated!');
-    // Successful authentication, redirect home.
-    res.json({
-      message: 'authenticated - proceed!'
-    });
+  }), do_authorized);
+
+function do_authorized(req, res) {
+  console.log('authenticated!');
+  // Successful authentication, redirect.
+  res.json({
+    message: 'authenticated - proceed!'
   });
+}
