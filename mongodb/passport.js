@@ -1,7 +1,6 @@
 var passport = require('passport');
-var 
+var github_strategy = require('passport-github2');
 var creds = require('./creds');
-
 
 
 passport.use(new GitHubStrategy({
