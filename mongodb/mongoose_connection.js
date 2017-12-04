@@ -10,10 +10,12 @@ var repository_doc = {
   no_of_commits: Number,
   last_commit: String
 }
+var rep_schema = new mongoose.Schema(repository_doc);
+
 var git_doc = {
   user: String,
   repository_url: String,
-  
+  repository_doc: rep_schema
 }
 
 var 
