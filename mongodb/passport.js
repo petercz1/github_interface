@@ -1,6 +1,7 @@
 var creds = require('./creds');
 
 
+
 passport.use(new GitHubStrategy({
     clientID: creds.client_id,
     clientSecret: creds.client_secret,
