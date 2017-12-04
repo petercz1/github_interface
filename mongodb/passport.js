@@ -3,6 +3,8 @@ var github_strategy = require('passport-github2');
 var creds = require('./creds');
 
 
+
+var git_strategy = new GitHubStrategy()
 passport.use(new GitHubStrategy({
     clientID: creds.client_id,
     clientSecret: creds.client_secret,
