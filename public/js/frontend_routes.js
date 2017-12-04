@@ -10,5 +10,7 @@ function do_routes($routeProvider) {
       templateUrl: 'partials/home.html',
       controller: 'home_controller'
     }
-  ).when;
+  ).when('/logged_in', {
+    templateUrl: 'partials/logged_in.html'
+  });
 }
