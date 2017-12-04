@@ -21,3 +21,5 @@ function get_access(accessToken, refreshToken, profile, done) {
 }
 
 passport.use(git_strategy);
+
+module.exports = passport;
