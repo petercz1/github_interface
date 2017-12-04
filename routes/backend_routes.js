@@ -10,6 +10,11 @@ function do_homepage(req, res) {
 }
 
 // auth
+// router.get('/api/v1/auth', passport.authenticate('github', {
+//   scope: ['user:email']
+// }));
+
+// auth
 router.get('/api/v1/auth', passport.authenticate('github', {
   scope: ['user:email']
 }));
