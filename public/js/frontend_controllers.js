@@ -7,7 +7,6 @@ function do_login_controller($scope, $http) {
     $http.get('/api/v1/auth').then(
         function (result) {
             console.log(result);
-            
         }
     )
 }
