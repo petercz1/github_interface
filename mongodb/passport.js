@@ -1,8 +1,8 @@
-var creds = require()
+var creds = require('./creds');
 
 passport.use(new GitHubStrategy({
-    clientID: GITHUB_CLIENT_ID,
-    clientSecret: GITHUB_CLIENT_SECRET,
+    clientID: creds.client_id,
+    clientSecret: creds.client_secret,
     callbackURL: "http://127.0.0.1:3000/auth/github/callback"
   },
   function(accessToken, refreshToken, profile, done) {
