@@ -9,9 +9,9 @@ function do_homepage(req, res) {
     res.render('index');
 }
 
-app.get('/auth/github', passport.authenticate('github', { scope: [ 'user:email' ] }));
+app.get('api/v1/auth', passport.authenticate('github', { scope: [ 'user:email' ] }));
 
-app.get('/auth/github/callback', 
+app.get('/api/v1/git_callback', 
 passport.authenticate('github', { failureRedirect: '/login' }),
 function(req, res) {
   // Successful authentication, redirect home.
