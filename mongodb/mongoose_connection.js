@@ -21,6 +21,6 @@ var git_doc = {
 // repository_doc: rep_schema
 var git_schema = new mongoose.Schema(git_doc)
 
-var Gituser = mongoose.model('git_user', git_schema);
+var GITUSER = mongoose.model('git_user', git_schema);
 
-module.exports = Gituser;
+module.exports = GITUSER;
