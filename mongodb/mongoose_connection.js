@@ -8,17 +8,18 @@ mongoose.connect(url, {
 
 var repository_doc = {
   no_of_commits: Number,
-  last_commit: String
+  last_commit: String,
+  repository_url: String,
 }
 var rep_schema = new mongoose.Schema(repository_doc);
 
 var git_doc = {
   user: String,
-  repository_url: String,
-  repository_doc: rep_schema
+  repositories:[rep_schema]
 }
 
-var 
+// repository_doc: rep_schema
+var git_schema = new mongoose.Schema(git_doc)
 
 var git_schema = new mongoose.Schema(git_doc);
 var Gituser = mongoose.model('git_user', git_schema);
