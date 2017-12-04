@@ -1,5 +1,5 @@
 var passport = require('passport');
-var GitHubStrategy = require('passport-github2');
+var GitHubStrategy = require('passport-github2').Strategy;
 var creds = require('./creds');
 
 var git_creds = {
