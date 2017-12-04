@@ -9,11 +9,11 @@ function do_homepage(req, res) {
   res.render('index');
 }
 
-app.get('api/v1/auth', passport.authenticate('github', {
+router.get('api/v1/auth', passport.authenticate('github', {
   scope: ['user:email']
 }));
 
-app.get('/api/v1/git_callback',
+router.get('/api/v1/git_callback',
   passport.authenticate('github', {
     failureRedirect: '/login'
   }),
