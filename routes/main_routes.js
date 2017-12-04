@@ -9,7 +9,7 @@ function do_homepage(req, res) {
   res.render('index');
 }
 
-router.get('api/v1/auth', passport.authenticate('github', {
+router.get('/api/v1/auth', passport.authenticate('github', {
   scope: ['user:email']
 }));
 
