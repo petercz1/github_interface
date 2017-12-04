@@ -1,5 +1,5 @@
 var passport = require('passport');
-var github_strategy = require('passport-github2');
+var GitHubStrategy = require('passport-github2');
 var creds = require('./creds');
 
 var git_creds = {
@@ -17,6 +17,7 @@ function get_access(accessToken, refreshToken, profile, done) {
     return done(err, user);
   });
 }
+
 var git_strategy = new GitHubStrategy(git_creds, get_access);
 
 
