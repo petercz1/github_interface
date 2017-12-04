@@ -20,6 +20,7 @@ function get_access(accessToken, refreshToken, profile, done) {
 
 var git_strategy = new GitHubStrategy(git_creds, get_access);
 
-passport.use(git_strategy);
+//passport.use(git_strategy);
+passport.use(new GitHubStrategy())
 
 module.exports = passport;
