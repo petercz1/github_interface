@@ -15,9 +15,14 @@ function do_homepage(req, res) {
 // }));
 
 // auth
-router.get('/api/v1/auth', passport.authenticate('github', {
-  scope: ['user:email']
-}));
+router.get('/api/v1/auth', do_logged_in);
+
+function do_logged_in(req, res) {
+  console.log('logged in');
+  res.json({
+    message: 'logged in'
+  })
+}
 
 router.get('/api/v1/git_callback',
   passport.authenticate('github', {
