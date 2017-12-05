@@ -19,7 +19,15 @@ router.get('/api/v1/git_callback',
     failureRedirect: '/failed'
   }), do_authenticated);
 
-router.get('/failed', do_failed)
+router.get('/failed', do_failed);
+
+function do_failed(req, res) {
+  console.log('doing failed');
+  res.json({
+    message: 'failed login'
+  });
+}
+
 function do_authenticated(req, res) {
   console.log('authenticated!');
   // Successful authentication, redirect.
