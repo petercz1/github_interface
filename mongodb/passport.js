@@ -18,4 +18,12 @@ var git_strategy = new GitHubStrategy(git_creds, get_access);
 
 passport.use(git_strategy);
 
+passport.serializeUser(function(user, done) {
+  done(null, user);
+});
+
+passport.deserializeUser(function(obj, done) {
+  done(null, obj);
+});
+
 module.exports = passport;
