@@ -25,7 +25,7 @@ function build_router(passport) {
     res.redirect('/#!/logged_in');
   }
 
-  app.get('/api/v1/logout', function(req, res){
+  router.get('/api/v1/logout', function(req, res){
     req.logout();
     res.redirect('/#!/');
   });
