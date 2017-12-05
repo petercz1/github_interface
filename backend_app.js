@@ -11,7 +11,8 @@ backend_app.use(bodyParser.urlencoded({extended: true}));
 backend_app.use(bodyParser.json());
 var corsOptions = {
     origin: 'http://localhost:4000',
-    optionsSuccessStatus: 200
+    optionsSuccessStatus: 200,
+    credentials: true
   }
 backend_app.use(cors());
 
