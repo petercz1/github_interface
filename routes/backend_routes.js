@@ -22,7 +22,6 @@ function build_router(passport) {
 
   router.get('/api/v1/git_callback', function (req, res, next) {
     passport.authenticate('github', {
-      successRedirect: '/logged_in',
       failureRedirect: '/failed'
     })
   });
