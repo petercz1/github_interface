@@ -15,10 +15,15 @@ function build_router(passport) {
     scope: ['user:email']
   }));
 
+  // router.get('/api/v1/git_callback',
+  //   passport.authenticate('github', {
+  //     failureRedirect: '/failed'
+  //   }), do_logged_in);
+
   router.get('/api/v1/git_callback',
-    passport.authenticate('github', {
-      failureRedirect: '/failed'
-    }), do_logged_in);
+  passport.authenticate('github', function (err, user, info) {
+    
+  }), do_logged_in);
 
   router.get('/failed', do_failed);
 
