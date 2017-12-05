@@ -9,7 +9,10 @@ var port = 4000;
 backend_app.use(express.static('public'));
 backend_app.use(bodyParser.urlencoded({extended: true}));
 backend_app.use(bodyParser.json());
-
+var corsOptions = {
+    origin: 'http://localhost:4000',
+    optionsSuccessStatus: 200
+  }
 backend_app.use(cors());
 
 backend_app.use(routes);
