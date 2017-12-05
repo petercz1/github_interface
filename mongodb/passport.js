@@ -1,4 +1,3 @@
-var passport = require('passport');
 var GitHubStrategy = require('passport-github2').Strategy;
 var creds = require('./creds.js');
 
