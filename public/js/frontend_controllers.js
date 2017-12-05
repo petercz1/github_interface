@@ -5,7 +5,7 @@ function do_home_controller($scope, $http) {
 function do_login_controller($scope, $http, $routeParams, $location) {
     console.log('pre login');
     console.log($routeParams);
-    $http.get('/api/v1/auth').then(
+    $http.jsonp('/api/v1/auth').then(
         function (result) {
             console.log('post login');
             console.log(result);
