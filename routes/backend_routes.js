@@ -14,12 +14,7 @@ function build_router(passport) {
   router.get('/api/v1/auth', passport.authenticate('github', {
     scope: ['user:email']
   }));
-
-  // router.get('/api/v1/git_callback',
-  //   passport.authenticate('github', {
-  //     failureRedirect: '/failed'
-  //   }), do_logged_in);
-
+  
   router.get('/api/v1/git_callback',
     passport.authenticate('github', {
       failureRedirect: '/#!/login'
@@ -27,7 +22,6 @@ function build_router(passport) {
     function (req, res) {
       res.redirect('/#!/logged_in');
     });
-
 
   router.get('/failed', do_failed);
 
@@ -41,7 +35,7 @@ function build_router(passport) {
 
   function do_logged_in(req, res) {
     console.log('doing logged in stuff');
-    res.redirect('#!/logged_in');
+    res.redirect('/#!/logged_in');
   }
 
   return router;
