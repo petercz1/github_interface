@@ -20,7 +20,7 @@ function build_router(passport) {
       successRedirect: '/logged_in',
       failureRedirect: '/failed'
     })
-  }, do_authenticated);
+  });
 
   router.get('/failed', do_failed);
   router.get('/logged_in', do_logged_in);
