@@ -35,7 +35,7 @@ function build_router(passport) {
 
   function do_logged_in(req, res) {
     console.log('doing logged in stuff');
-    res.
+    res.json({message: 'doing redirect?'})
   }
 
   function do_authenticated(req, res) {
