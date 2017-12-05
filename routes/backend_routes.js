@@ -30,8 +30,9 @@ function build_router(passport) {
     });
   }
 
-  function do_logged_in(req, res) {
+  function do_logged_in(req, res, next) {
     console.log('doing logged in stuff');
+    console.log(err);
     res.redirect('#!/logged_in');
   }
 
