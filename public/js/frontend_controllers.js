@@ -1,15 +1,19 @@
 function do_home_controller($scope, $http) {
-    console.log('doing home controller');
+  console.log('doing home controller');
+  $scope.login = function () {
+    console.log('login clicked');
+    $http.get('/api/v1/auth').then(
+      function (result) {
+        console.log('post login');
+        console.log(result);
+        $location.path('logged_in'); // up to here!
+      }
+    )
+  }
 }
 
 function do_login_controller($scope, $http, $routeParams, $location) {
-    console.log('pre login');
-    console.log($routeParams);
-    $http.get('/api/v1/auth').then(
-        function (result) {
-            console.log('post login');
-            console.log(result);
-            $location.path('logged_in'); // up to here!
-        }
-    )
+  console.log('pre login');
+  console.log($routeParams);
+
 }

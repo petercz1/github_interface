@@ -15,11 +15,10 @@ function build_router(passport) {
     scope: ['user:email']
   }));
 
-  router.get('/api/v1/git_callback', function (req, res, next) {
+  router.get('/api/v1/git_callback',
     passport.authenticate('github', {
       failureRedirect: '/failed'
-    })
-  }, do_logged_in);
+    }), do_logged_in);
 
   router.get('/failed', do_failed);
 
@@ -33,16 +32,9 @@ function build_router(passport) {
 
   function do_logged_in(req, res) {
     console.log('doing logged in stuff');
-    res.json({message: 'doing redirect?'})
+    res.redirect('#!/logged_in');
   }
 
-  function do_authenticated(req, res) {
-    console.log('authenticated!');
-    // Successful authentication, redirect.
-    res.json({
-      message: 'authenticated - proceed!'
-    });
-  }
   return router;
 }
 
