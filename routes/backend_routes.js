@@ -1,8 +1,7 @@
 function build_router(passport){
 
 var router = require('express').Router();
-var passport = require('../mongodb/passport');
-module.exports = router;
+var passport = require('../mongodb/passport')(passport);
 
 router.get('/', do_homepage);
 
@@ -38,5 +37,7 @@ function do_authenticated(req, res) {
     message: 'authenticated - proceed!'
   });
 }
-
+return router;
 }
+
+module.exports = build_router;

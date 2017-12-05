@@ -1,3 +1,7 @@
+function name(params) {
+  
+}
+
 var GitHubStrategy = require('passport-github2').Strategy;
 var creds = require('./creds.js');
 
