@@ -15,8 +15,11 @@ function build_router(passport) {
     scope: ['user:email']
   }));
 
-  router.get('/api/v1/git_callback',
+  router.get('/api/v1/git_callback', function (req, res, next) {
+    
+  }
     passport.authenticate('github', {
+      successRedirect: req.session.returnTo,      
       failureRedirect: '/failed'
     }), do_authenticated);
 
