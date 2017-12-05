@@ -21,10 +21,11 @@ function build_router(passport) {
   //   }), do_logged_in);
 
   router.get('/api/v1/git_callback',
-  passport.authenticate('github'), function (err, req, res, next) {
-    console.log(err);
-    console.log(user);
-  });
+    passport.authenticate('github'),
+    function (err, req, res, next) {
+      console.log(err);
+      next();
+    });
 
   router.get('/failed', do_failed);
 
