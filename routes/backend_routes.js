@@ -1,3 +1,5 @@
+function build_router(passport){
+
 var router = require('express').Router();
 var passport = require('../mongodb/passport');
 module.exports = router;
@@ -35,4 +37,6 @@ function do_authenticated(req, res) {
   res.json({
     message: 'authenticated - proceed!'
   });
+}
+
 }

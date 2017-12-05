@@ -2,7 +2,7 @@ var express = require('express');
 var backend_app = express();
 var bodyParser = require('body-parser');
 var passport = require('passport');
-var routes = require('./routes/backend_routes');
+var routes = require('./routes/backend_routes')(passport);
 var port = 4000;
 
 //backend_app.set('view engine', 'ejs');
