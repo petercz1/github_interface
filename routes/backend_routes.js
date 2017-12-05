@@ -24,7 +24,7 @@ function build_router(passport) {
     passport.authenticate('github'),
     function (err, req, res, next) {
       console.log(err);
-      next();
+      res.redirect('#!/logged_in');
     });
 
   router.get('/failed', do_failed);
