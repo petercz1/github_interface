@@ -22,10 +22,10 @@ function build_router(passport) {
 
   router.get('/api/v1/git_callback',
     passport.authenticate('github', {
-      failureRedirect: '/login'
+      failureRedirect: '/#!/login'
     }),
     function (req, res) {
-      res.redirect('#!/logged_in');
+      res.redirect('/#!/logged_in');
     });
 
 
