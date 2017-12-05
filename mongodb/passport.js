@@ -10,7 +10,7 @@ var git_creds = {
 
 function get_access(accessToken, refreshToken, profile, done) {
   console.log('getting access');
-  console.log(profile);
+  //console.log(profile);
   return done();
 }
 
