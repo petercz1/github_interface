@@ -4,3 +4,5 @@ var creds = {
     callback_url: 'http://localhost:4000/api/v1/git_callback'
 }
 module.exports = creds;
+
+// rename creds_example.js to creds.js
