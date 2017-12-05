@@ -9,7 +9,9 @@ var port = 4000;
 backend_app.use(express.static('public'));
 backend_app.use(bodyParser.urlencoded({extended: true}));
 backend_app.use(bodyParser.json());
+
 backend_app.use(cors());
+
 backend_app.use(routes);
 
 backend_app.listen(port, listening);
