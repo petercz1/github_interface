@@ -10,7 +10,9 @@ function do_homepage(req, res) {
 }
 
 // auth
-router.get('/api/v1/auth', passport.authenticate('github', function (err, user, info) {
+router.get('/api/v1/auth', passport.authenticate('github', {
+  scope: ['user:email']
+}, function (err, user, info) {
   console.log('returning from github');
   console.log(err);
   console.log('user:');
