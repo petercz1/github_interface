@@ -13,7 +13,10 @@ function build_router(passport) {
   // auth
   router.get('/api/v1/auth', passport.authenticate('github', {
     scope: ['user:email']
-  }));
+  }), function (req, res, next) {
+    req.session.returnTo = '/#' + req.query.returnTo; 
+    next();
+  });
 
   router.get('/api/v1/git_callback', function (req, res, next) {
     passport.authenticate('github', {
