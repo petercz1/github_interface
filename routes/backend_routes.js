@@ -12,12 +12,12 @@ function do_homepage(req, res) {
 // auth
 router.get('/api/v1/auth', passport.authenticate('github', {
   scope: ['user:email']
-}, function (err, user, info) {
+}), function (err, user, info) {
   console.log('returning from github');
   console.log(err);
   console.log('user:');
   console.log(user);
-}));
+});
 
 router.get('/api/v1/git_callback',
   passport.authenticate('github', {
