@@ -11,6 +11,10 @@ function build_router(passport) {
   }
 
   // auth
+
+  router.get('/api/v1/auth', function (req,res,next) {
+    console.log('');
+  })
   router.get('/api/v1/auth', passport.authenticate('github', {
     scope: ['user:email']
   }));
