@@ -1,7 +1,5 @@
 function build_passport(passport) {
 
-
-
   var GitHubStrategy = require('passport-github2').Strategy;
   var creds = require('./creds.js');
 
