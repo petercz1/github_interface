@@ -23,7 +23,7 @@ router.get('/failed', do_failed);
 
 function do_failed(req, res) {
   console.log('doing failed');
-  
+  console.log(req.body);
   res.json({
     message: 'failed login'
   });
