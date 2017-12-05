@@ -11,7 +11,7 @@ var git_creds = {
 function get_access(accessToken, refreshToken, profile, done) {
   console.log('getting access');
   console.log(profile);
-  return done();
+  return done(null, profile);
 }
 
 var git_strategy = new GitHubStrategy(git_creds, get_access);
