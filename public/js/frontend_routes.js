@@ -12,5 +12,7 @@ function do_routes($routeProvider) {
     }
   ).when('/logged_in', {
     templateUrl: 'partials/logged_in.html'
+  }).when('/failed', {
+    templateUrl: 'partials/failed.html'
   });
 }
