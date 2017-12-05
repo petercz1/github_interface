@@ -16,12 +16,11 @@ function build_router(passport) {
   }));
 
   router.get('/api/v1/git_callback', function (req, res, next) {
-    
-  }
     passport.authenticate('github', {
-      successRedirect: req.session.returnTo,      
+      successRedirect: req.session.returnTo,
       failureRedirect: '/failed'
-    }), do_authenticated);
+    })
+  }, do_authenticated);
 
   router.get('/failed', do_failed);
 
