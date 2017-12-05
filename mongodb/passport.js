@@ -8,7 +8,6 @@ function build_passport(passport) {
     clientSecret: creds.client_secret,
     callbackURL: creds.callback_url
   };
-  console.log(git_creds);
 
   function get_access(accessToken, refreshToken, profile, done) {
     console.log('getting access');
