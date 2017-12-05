@@ -22,7 +22,6 @@ function build_router(passport) {
   }, do_logged_in);
 
   router.get('/failed', do_failed);
-  router.get('/logged_in', do_logged_in);
 
   function do_failed(req, res) {
     console.log('doing failed');
