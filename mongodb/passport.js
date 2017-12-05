@@ -8,6 +8,8 @@ var git_creds = {
   callbackURL: creds.callback_url
 };
 
+console.log(git_creds.clientID);
+
 function get_access(accessToken, refreshToken, profile, done) {
   console.log('getting access');
   //console.log(profile);
