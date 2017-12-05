@@ -3,10 +3,11 @@ function do_home_controller($scope, $http) {
 }
 
 function do_login_controller($scope, $http, $routeParams, $location) {
-    console.log('doing login controller');
+    console.log('pre login');
     console.log($routeParams);
     $http.get('/api/v1/auth').then(
         function (result) {
+            console.log('post login');
             console.log(result);
             $location.path('logged_in'); // up to here!
         }
