@@ -23,6 +23,7 @@ function build_router(passport) {
   }, do_authenticated);
 
   router.get('/failed', do_failed);
+  router.get('/logged_in', do_logged_in);
 
   function do_failed(req, res) {
     console.log('doing failed');
@@ -30,6 +31,11 @@ function build_router(passport) {
     res.json({
       message: 'failed login'
     });
+  }
+
+  function do_logged_in(req, res) {
+    console.log('doing logged in stuff');
+    res.
   }
 
   function do_authenticated(req, res) {
