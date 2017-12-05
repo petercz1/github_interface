@@ -16,7 +16,7 @@ router.get('/api/v1/auth', passport.authenticate('github', {
 
 router.get('/api/v1/git_callback',
   passport.authenticate('github', {
-    failureRedirect: '/'
+    failureRedirect: '/failed'
   }), do_authenticated);
 
 function do_authenticated(req, res) {
