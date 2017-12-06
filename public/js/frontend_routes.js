@@ -26,6 +26,6 @@ function do_routes($routeProvider, $httpProvider) {
       controller: 'github_data'
     }).when('/repositories', {
       templateUrl: 'partials/repositories.html',
-      controller: 'repositories_controller'
+      controller: 'reps_controller'
     });
 }

@@ -21,12 +21,13 @@ function do_github_data($scope, $http) {
   console.log('doing github data');
 }
 
-function do_repositories_controller($scope, $http){
+function do_reps_controller($scope, $http){
   $http.get('/api/v1/repositories')
   .then(
     function (results) {
       console.log('data from github');
       console.log(results.data);
+      $scope.reps = results.data;
     }
   );
 }
