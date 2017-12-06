@@ -12,7 +12,7 @@
         </th>
       </tr>
     </thead>
-    <tbody ng-repeat="rep in reps"  gmDraggable="rep" gm-on-invalid-drop='reset' gm-on-drop='reorder' gm-on-hover='onHover(item)'>
+    <tbody ng-repeat="rep in reps"  gmDraggable="rep" gm-on-invalid-drop='reset' gm-on-drop='reorder' gm-on-hover='onHover(rep)'>
       <tr>
         <td>{{rep.name}}</td>
         <td>
