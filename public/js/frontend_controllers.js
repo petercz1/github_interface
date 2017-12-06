@@ -13,7 +13,6 @@ function do_logged_in_controller($scope, $http) {
       function (results) {
         console.log('data from github');
         console.log(results.data);
-        $scope.
       }
     );
 }
@@ -21,4 +20,13 @@ function do_logged_in_controller($scope, $http) {
 function do_github_data($scope, $http) {
   console.log('doing github data');
 }
-function do_repositories_controller(){}
+
+function do_repositories_controller($scope, $http){
+  $http.get('/api/v1/repositories')
+  .then(
+    function (results) {
+      console.log('data from github');
+      console.log(results.data);
+    }
+  );
+}
