@@ -13,7 +13,7 @@ function build_router(passport) {
   }
   // data---------------------------------------
   router.get('/api/v1/github_data', do_github_data);
-  router.get('/api/v1/repositories', do_respoitories);
+  router.get('/api/v1/repositories', do_repositories);
 
   function do_github_data(req, res) {
     console.log('doing BE github data');
@@ -37,7 +37,7 @@ function build_router(passport) {
 
   }
 
-  function do_respoitories(req, res) {
+  function do_repositories(req, res) {
     console.log('doing repositories');
     var options = {
       url: 'https://api.github.com/user/repos?access_token=' + req.user.accessToken,
