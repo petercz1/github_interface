@@ -21,3 +21,4 @@ function do_logged_in_controller($scope, $http) {
 function do_github_data($scope, $http) {
   console.log('doing github data');
 }
+function do_repositories_controller(){}
