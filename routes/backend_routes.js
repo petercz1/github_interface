@@ -11,9 +11,13 @@ function build_router(passport) {
     res.sendfile('index.html');
   }
   // data---------------------------------------
-router.get('/api/v1/github_data', do_github_data);
-f
-  
+  router.get('/api/v1/github_data', do_github_data);
+
+  function do_github_data(req, res) {
+    console.log('doing BE github data');
+    console.log(req.body);
+  }
+
   // auth---------------------------------------
   router.get('/api/v1/auth', passport.authenticate('github', {
     scope: ['user:email']
