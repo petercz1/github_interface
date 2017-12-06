@@ -39,8 +39,10 @@ function build_router(passport) {
 
   function do_repositories(req, res) {
     console.log('doing repositories');
+    // github returns a max of 100 in one page
+
     var options = {
-      url: 'https://api.github.com/user/repos?access_token=' + req.user.accessToken + '&per_page=100',
+      url: 'https://api.github.com/user/repos?access_token=' + req.user.accessToken + '&per_page=100&page=1',
       headers: {
         'User-Agent': 'request'
       }
