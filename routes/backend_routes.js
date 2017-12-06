@@ -29,7 +29,7 @@ function build_router(passport) {
       console.log(body);
       res.json(body);
     }
-    request('https://api.github.com/?access_token=' + , callback);
+    request('https://api.github.com/?access_token=' + req.user.accessToken, callback);
 
     // res.json({
     //   accessToken: req.user.accessToken
