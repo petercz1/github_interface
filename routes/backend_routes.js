@@ -11,7 +11,8 @@ function build_router(passport) {
     res.sendfile('index.html');
   }
   // data---------------------------------------
-
+router.get('/api/v1/github_data', do_github_data);
+f
   
   // auth---------------------------------------
   router.get('/api/v1/auth', passport.authenticate('github', {
