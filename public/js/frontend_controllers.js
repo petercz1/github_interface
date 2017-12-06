@@ -11,7 +11,7 @@ function do_logged_in_controller($scope, $http) {
   $http.get('/api/v1/github_data').then(
     function (results) {
       console.log('data from github');
-      console.log(results);
+      console.log(results.data.accessToken);
     }
   )
 }
