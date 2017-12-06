@@ -19,5 +19,6 @@ function do_routes($routeProvider) {
     .when('/failed', {
       templateUrl: 'partials/failed.html'
     })
-    .when('/authToken');
+    .when('/authToken',{
+    });
 }
