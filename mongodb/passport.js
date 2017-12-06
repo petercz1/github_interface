@@ -10,7 +10,7 @@ function build_passport(passport) {
   };
 
   function get_access(accessToken, refreshToken, profile, done) {
-    console.log('getting access');
+    console.log('access token:');
     console.log(accessToken);
     profile.accessToken = accessToken;
     return done(null, profile);
@@ -21,14 +21,10 @@ function build_passport(passport) {
   passport.use(git_strategy);
 
   passport.serializeUser(function (user, done) {
-    console.log('serializing');
-    console.log(user);
     done(null, user);
   });
 
   passport.deserializeUser(function (obj, done) {
-    console.log('deserializing');
-    console.log(obj);
     done(null, obj);
   });
   return passport;
