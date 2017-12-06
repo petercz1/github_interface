@@ -2,7 +2,6 @@ var express = require('express');
 var backend_app = express();
 var bodyParser = require('body-parser');
 var passport = require('passport');
-var cookieParser = require('cookie-parser');
 var session = require('express-session');
 var routes = require('./routes/backend_routes')(passport);
 var port = 4000;
@@ -11,7 +10,6 @@ var port = 4000;
 backend_app.use(express.static('public'));
 backend_app.use(bodyParser.urlencoded({extended: true}));
 backend_app.use(bodyParser.json());
-backend_app.use(cookieParser())
 backend_app.use(session({ secret: 'proper github', resave: false, saveUninitialized: false }));
 backend_app.use(passport.initialize());
 backend_app.use(passport.session());
