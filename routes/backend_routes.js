@@ -15,6 +15,7 @@ function build_router(passport) {
 
   function do_github_data(req, res) {
     console.log('doing BE github data');
+    console.log(req.user);
     res.json({
       message: 'got it?'
     })
