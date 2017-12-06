@@ -8,12 +8,13 @@ function do_login_controller($scope, $http) {
 
 function do_logged_in_controller($scope, $http) {
   console.log('doing logged in controller');
-  $http.get('/api/v1/github_data').then(
-    function (results) {
-      console.log('data from github');
-      console.log(results.data.accessToken);
-    }
-  )
+  $http.get('/api/v1/github_data')
+    .then(
+      function (results) {
+        console.log('data from github');
+        console.log(results.data.accessToken);
+      }
+    );
 }
 
 function do_github_data($scope, $http) {
