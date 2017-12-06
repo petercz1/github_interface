@@ -2,6 +2,7 @@ function build_router(passport) {
 
   var router = require('express').Router();
   var passport = require('../mongodb/passport')(passport);
+  var request = require('request');
 
   // homepage-----------------------------------
   router.get('/', do_homepage);
@@ -16,7 +17,7 @@ function build_router(passport) {
   function do_github_data(req, res) {
     console.log('doing BE github data');
     console.log(req.user.accessToken);
-    
+req
     res.json({
       accessToken: req.user.accessToken
     })
