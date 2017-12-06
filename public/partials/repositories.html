@@ -5,10 +5,15 @@
 <thead>
     <tr>
         <th>
-            
+            name
         </th>
     </tr>
 </thead>
+<tbody ng-repeat="rep in repositories">
+    <tr>
+        <td>{{rep.name}}</td>
+    </tr>
+</tbody>
 
 </table>
     
