@@ -13,7 +13,7 @@ function build_passport(passport) {
     console.log('getting access');
     console.log(accessToken);
     //console.log(profile);
-    return done(null, profile, accessToken);
+    return done(null, profile);
   }
 
   var git_strategy = new GitHubStrategy(git_creds, get_access);
