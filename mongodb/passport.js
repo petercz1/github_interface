@@ -22,7 +22,6 @@ function build_passport(passport) {
 
   passport.serializeUser(function (user, done) {
     console.log('serializing...');
-    console.log(user);
     done(null, user);
   });
 
