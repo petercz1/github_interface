@@ -18,7 +18,7 @@ function build_router(passport) {
     console.log('doing BE github data');
     console.log(req.user.accessToken);
     var github_api_oauth = {
-      
+      token: req.user.accessToken
     }
     function callback(err, response, body) {
       if(err)console.log(err);
@@ -28,7 +28,7 @@ function build_router(passport) {
       console.log(body);
       res.json(body);
     }
-    request(github_api_options, callback);
+    request.get({url: 'https://api.github.com', oauth: github_api_oauth});
 
     // res.json({
     //   accessToken: req.user.accessToken
