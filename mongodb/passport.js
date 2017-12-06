@@ -28,6 +28,8 @@ function build_passport(passport) {
   });
 
   passport.deserializeUser(function (obj, done) {
+    console.log('deserializing');
+    console.log(obj);
     done(null, obj);
   });
   return passport;
