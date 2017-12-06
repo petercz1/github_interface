@@ -32,7 +32,7 @@ function build_router(passport) {
     request.get({
       url: 'https://api.github.com',
       oauth: github_api_oauth
-    }, calback);
+    }, callback);
 
     // res.json({
     //   accessToken: req.user.accessToken
