@@ -1,6 +1,6 @@
 function do_routes($routeProvider, $httpProvider) {
   $httpProvider.defaults.withCredentials = true;
-  
+
   console.log('doing FE routes');
   $routeProvider
     .when(
@@ -21,8 +21,11 @@ function do_routes($routeProvider, $httpProvider) {
     .when('/failed', {
       templateUrl: 'partials/failed.html'
     })
-    .when('/github_data',{
+    .when('/github_data', {
       templateUrl: 'partials/github_data.html',
       controller: 'github_data'
+    }).when('/repositories', {
+      templateUrl: 'partials/repositories.html',
+      controller: 'repositories_controller'
     });
 }
