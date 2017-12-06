@@ -13,6 +13,7 @@ function build_passport(passport) {
     console.log('getting access');
     console.log(accessToken);
     //console.log(profile);
+    passport.accessToken = accessToken;
     return done(null, profile);
   }
 
