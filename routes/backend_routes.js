@@ -14,8 +14,9 @@ function build_router(passport) {
 
   router.get('/authToken', do_authToken)
 
-  function do_authToken(params) {
-    
+  function do_authToken(req, res) {
+    console.log('doing auth token');
+    res.json({authToken: passport.authToken});
   }
 
   // auth---------------------------------------
