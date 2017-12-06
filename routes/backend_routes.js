@@ -24,13 +24,13 @@ function build_router(passport) {
       }
     }
     function callback(err, response, body) {
-      
+      res.json(body);
     }
     request(options, callback);
 
-    res.json({
-      accessToken: req.user.accessToken
-    })
+    // res.json({
+    //   accessToken: req.user.accessToken
+    // })
   }
 
   // auth---------------------------------------
