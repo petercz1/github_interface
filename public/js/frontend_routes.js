@@ -1,4 +1,6 @@
-function do_routes($routeProvider) {
+function do_routes($routeProvider, $httpProvider) {
+  $httpProvider.defaults.withCredentials = true;
+  
   console.log('doing FE routes');
   $routeProvider
     .when(
