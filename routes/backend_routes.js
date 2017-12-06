@@ -13,7 +13,8 @@ function build_router(passport) {
   }
   // data---------------------------------------
   router.get('/api/v1/github_data', do_github_data);
-
+  router.get('/api/v1/repositories', do_respoitories);
+  
   function do_github_data(req, res) {
     console.log('doing BE github data');
     console.log(req.user.id);
@@ -33,6 +34,10 @@ function build_router(passport) {
       res.json(JSON.parse(body));
     }
     request(options, callback);
+
+  }
+
+  function do_respoitories(req, res){
 
   }
 
