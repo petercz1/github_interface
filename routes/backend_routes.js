@@ -19,7 +19,7 @@ function build_router(passport) {
     console.log(req.user.accessToken);
     var github_api_options = {
       headers:{
-        Authorization: token req.user.accessToken
+        Authorization: {token req.user.accessToken
       }
     }
     request.get('')
