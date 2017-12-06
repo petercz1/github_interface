@@ -14,7 +14,7 @@ function build_router(passport) {
   // data---------------------------------------
   router.get('/api/v1/github_data', do_github_data);
   router.get('/api/v1/repositories', do_respoitories);
-  
+
   function do_github_data(req, res) {
     console.log('doing BE github data');
     console.log(req.user.id);
@@ -37,8 +37,20 @@ function build_router(passport) {
 
   }
 
-  function do_respoitories(req, res){
+  function do_respoitories(req, res) {
+    console.log('doing repositories');
+    var options = {
+      url: 'https://api.github.com/user/repos?access_token=' + req.user.accessToken,
+      headers: {
+        'User-Agent': 'request'
+      }
+    }
 
+    function callback(err, response, body) {
+      if (err) console.log(err);
+      res.json(JSON.parse(body));
+    }
+    request(options, callback);
   }
 
   // auth---------------------------------------
