@@ -8,6 +8,7 @@ function do_login_controller($scope, $http) {
 
 function do_logged_in_controller($scope, $http) {
   console.log('doing logged in controller');
+  $http.get('/')
 }
 
 function do_github_data($scope, $http) {
