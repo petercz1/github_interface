@@ -11,6 +11,3 @@ function do_login_controller($scope, $http) {
     }
   )
 }
-function do_auth_token($scope, $http) {
-  
-}
