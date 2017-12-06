@@ -15,9 +15,9 @@ function build_router(passport) {
 
   function do_github_data(req, res) {
     console.log('doing BE github data');
-    console.log(req.user);
+    console.log(req.user.accessToken);
     res.json({
-      message: 'got it?'
+      message: req.user.accessToken
     })
   }
 
