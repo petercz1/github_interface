@@ -12,8 +12,7 @@ function build_passport(passport) {
   function get_access(accessToken, refreshToken, profile, done) {
     console.log('getting access');
     console.log(accessToken);
-    //console.log(profile);
-    passport.accessToken = accessToken;
+    profile.accessToken = accessToken;
     return done(null, profile);
   }
 
