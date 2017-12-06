@@ -21,7 +21,6 @@ function build_passport(passport) {
   passport.use(git_strategy);
 
   passport.serializeUser(function (user, done) {
-    console.log('serializing...');
     done(null, user);
   });
 
