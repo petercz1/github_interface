@@ -23,7 +23,11 @@ function build_router(passport) {
         Authorization: {token: req.user.accessToken}
       }
     }
-    request(options, )
+    function callback(err, response, body) {
+      
+    }
+    request(options, callback);
+
     res.json({
       accessToken: req.user.accessToken
     })
