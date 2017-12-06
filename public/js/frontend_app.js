@@ -6,3 +6,4 @@ frontend_app.config(do_routes);
 frontend_app.controller('home_controller', do_home_controller);
 frontend_app.controller('login_controller', do_login_controller);
 frontend_app.controller('logged_in_controller', do_logged_in_controller);
+frontend_app.controller('logged_in_controller', do_logged_in_controller);

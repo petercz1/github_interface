@@ -19,7 +19,8 @@ function do_routes($routeProvider) {
     .when('/failed', {
       templateUrl: 'partials/failed.html'
     })
-    .when('/authToken',{
-      controller: 'auth_token'
+    .when('/github_data',{
+      templateUrl: 'partials/github_data.html',
+      controller: 'github_data'
     });
 }
