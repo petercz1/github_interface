@@ -1,24 +1,26 @@
 <div ng-controller="reps_controller">
-<h2>Repositories</h2>
+  <h2>Repositories</h2>
 
-<table class="table">
-<thead>
-    <tr>
+  <table class="table">
+    <thead>
+      <tr>
         <th>
-            name
+          name
         </th>
         <th>
-            link
+          link
         </th>
-    </tr>
-</thead>
-<tbody ng-repeat="rep in reps">
-    <tr data-drag="true" jqyoui-draggable>
+      </tr>
+    </thead>
+    <tbody ng-repeat="rep in reps">
+      <tr drag-container="true" drag-data="model" on-drag-start="ctl.handleDragStart($event, $dragData)" on-drag-end="ctl.handleDragEnd($event, $dragData)">
         <td>{{rep.name}}</td>
-        <td><a href="{{rep.html_url}}">{{rep.html_url}}}</a></td>
-    </tr>
-</tbody>
+        <td>
+          <a href="{{rep.html_url}}">{{rep.html_url}}}</a>
+        </td>
+      </tr>
+    </tbody>
 
-</table>
-    
+  </table>
+
 </div>
