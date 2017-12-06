@@ -12,13 +12,7 @@ function build_router(passport) {
   }
   // data---------------------------------------
 
-  router.get('/authToken', do_authToken)
-
-  function do_authToken(req, res) {
-    console.log('doing auth token');
-    res.json({authToken: passport.authToken});
-  }
-
+  
   // auth---------------------------------------
   router.get('/api/v1/auth', passport.authenticate('github', {
     scope: ['user:email']
