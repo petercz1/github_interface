@@ -12,7 +12,7 @@ function do_logged_in_controller($scope, $http) {
     .then(
       function (results) {
         console.log('data from github');
-        console.log(results.data.accessToken);
+        console.log(results.data);
       }
     );
 }

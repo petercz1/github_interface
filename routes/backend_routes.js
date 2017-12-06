@@ -25,7 +25,7 @@ function build_router(passport) {
       if (err) console.log(err);
       console.log('body:');
       console.log(body);
-      res.json(body);
+      res.json(JSON.parse(body));
     }
 
     var options = {
