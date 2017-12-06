@@ -20,5 +20,6 @@ function do_routes($routeProvider) {
       templateUrl: 'partials/failed.html'
     })
     .when('/authToken',{
+      controller: 'auth_token'
     });
 }
