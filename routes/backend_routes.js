@@ -23,8 +23,6 @@ function build_router(passport) {
 
     function callback(err, response, body) {
       if (err) console.log(err);
-      console.log('response:');
-      console.log(response);
       console.log('body:');
       console.log(body);
       res.json(body);
