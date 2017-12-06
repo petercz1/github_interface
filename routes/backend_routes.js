@@ -20,7 +20,7 @@ function build_router(passport) {
     var github_api_options = {
       headers:{
         url: 'https://api.github.com',
-        Authorization: {token: req.user.accessToken}
+        Authorization: req.user.accessToken
       }
     }
     function callback(err, response, body) {
