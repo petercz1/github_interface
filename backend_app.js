@@ -10,6 +10,7 @@ var port = 4000;
 backend_app.use(express.static('public'));
 backend_app.use(bodyParser.urlencoded({extended: true}));
 backend_app.use(bodyParser.json());
+backend_app.use(cookieParser())
 backend_app.use(session({ secret: 'proper github', resave: false, saveUninitialized: false }));
 backend_app.use(passport.initialize());
 backend_app.use(passport.session());
