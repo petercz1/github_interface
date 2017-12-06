@@ -40,7 +40,7 @@ function build_router(passport) {
   function do_repositories(req, res) {
     console.log('doing repositories');
     var options = {
-      url: 'https://api.github.com/user/repos?access_token=' + req.user.accessToken + '?per_page=200,
+      url: 'https://api.github.com/user/repos?access_token=' + req.user.accessToken,
       headers: {
         'User-Agent': 'request'
       }
