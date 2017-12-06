@@ -3,14 +3,22 @@ function build_router(passport) {
   var router = require('express').Router();
   var passport = require('../mongodb/passport')(passport);
 
+  // homepage-----------------------------------
   router.get('/', do_homepage);
 
   function do_homepage(req, res) {
     console.log('doing homepage');
     res.sendfile('index.html');
   }
+  // data---------------------------------------
 
-  // auth
+  router.get('/authToken', do_authToken)
+
+  function do_authToken(params) {
+    
+  }
+
+  // auth---------------------------------------
   router.get('/api/v1/auth', passport.authenticate('github', {
     scope: ['user:email']
   }));
@@ -26,7 +34,7 @@ function build_router(passport) {
     res.redirect('/#!/logged_in');
   }
 
-  router.get('/api/v1/logout', function(req, res){
+  router.get('/api/v1/logout', function (req, res) {
     req.logout();
     res.redirect('/#!/');
   });
