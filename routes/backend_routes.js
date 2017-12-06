@@ -16,10 +16,11 @@ function build_router(passport) {
 
   function do_github_data(req, res) {
     console.log('doing BE github data');
-    console.log(req.user);
+    console.log(req.user.id);
+    console.log(req.user.displayName);
     console.log(req.user.username);
     console.log(req.user.profileUrl);
-    
+
     var options = {
       url: 'https://api.github.com/user/repos?access_token=' + req.user.accessToken,
       headers: {

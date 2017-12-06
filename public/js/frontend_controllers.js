@@ -13,6 +13,7 @@ function do_logged_in_controller($scope, $http) {
       function (results) {
         console.log('data from github');
         console.log(results.data);
+        $scope.
       }
     );
 }
