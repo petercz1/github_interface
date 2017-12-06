@@ -13,7 +13,7 @@
       </tr>
     </thead>
     <tbody ng-repeat="rep in reps">
-      <tr gmDraggable="rep">
+      <tr gmDraggable="{rep:rep}">
         <td>{{rep.name}}</td>
         <td>
           <a href="{{rep.html_url}}">{{rep.html_url}}}</a>
