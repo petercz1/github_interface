@@ -17,26 +17,22 @@ function build_router(passport) {
   function do_github_data(req, res) {
     console.log('doing BE github data');
     console.log(req.user);
-
-    function callback(err, response, body) {
-      if (err) console.log(err);
-      console.log('body:');
-      console.log(body);
-      res.json(JSON.parse(body));
-      //res.json(body);
-    }
-
+    
     var options = {
       url: 'https://api.github.com/?access_token=' + req.user.accessToken,
       headers: {
         'User-Agent': 'request'
       }
     }
+
+    function callback(err, response, body) {
+      if (err) console.log(err);
+      console.log('body:');
+      console.log(body);
+      res.json(JSON.parse(body));
+    }
     request(options, callback);
 
-    // res.json({
-    //   accessToken: req.user.accessToken
-    // })
   }
 
   // auth---------------------------------------
