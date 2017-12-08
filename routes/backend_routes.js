@@ -17,6 +17,7 @@ function build_router(passport) {
   router.delete('/api/v4/delete/:id', do_delete);
 
   function do_delete(req, res) {
+    console.log('deleting repository?');
     console.log(req.params);
     // TODO - delete rep from github!
   }
