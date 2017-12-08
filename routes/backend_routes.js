@@ -14,7 +14,12 @@ function build_router(passport) {
   // data---------------------------------------
   router.get('/api/v1/github_data', do_github_data);
   router.get('/api/v1/repositories', do_repositories);
-  router.delete('/api/v4/delete/:id')
+  router.delete('/api/v4/delete/:id', do_delete);
+
+  function do_delete(req, res) {
+    console.log(req.params);
+    // TODO - delete rep from github!
+  }
 
   function do_github_data(req, res) {
     console.log('doing BE github data');
