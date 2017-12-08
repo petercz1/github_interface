@@ -30,4 +30,9 @@ function do_reps_controller($scope, $http){
       $scope.reps = results.data;
     }
   );
+
+  $scop.delete = function (rep) {
+    console.log('deleting...');
+    console.log(rep);
+  }
 }
