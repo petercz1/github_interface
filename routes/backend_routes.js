@@ -19,6 +19,18 @@ function build_router(passport) {
   function do_delete(req, res) {
     console.log('deleting repository?');
     console.log(req.params);
+    var options = {
+      url: 'https://api.github.com/user/repos?access_token=' + req.user.accessToken,
+      headers: {
+        'User-Agent': 'request'
+      }
+    }
+    function callback(err, response, body) {
+      if (err) console.log(err);
+      res.json(JSON.parse(body));
+    }
+    request(options, callback);
+
     res.json({
       message: 'deleted repository'
     })
@@ -29,7 +41,7 @@ function build_router(passport) {
     console.log('doing BE github data');
     console.log(req.user.id);
 
-    var options = {
+    var get_options = {
       url: 'https://api.github.com/user/repos?access_token=' + req.user.accessToken,
       headers: {
         'User-Agent': 'request'
