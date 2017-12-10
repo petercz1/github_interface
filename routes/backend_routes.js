@@ -51,7 +51,6 @@ function build_router(passport) {
       res.json(JSON.parse(body));
     }
     request(get_repositories_options, get_repositories_callback);
-
   }
 
   function do_repositories(req, res) {
