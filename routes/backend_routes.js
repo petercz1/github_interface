@@ -20,7 +20,7 @@ function build_router(passport) {
     console.log('deleting repository...');
     console.log(req.params);
     var delete_repository_options = {
-      url: 'https://api.github.com/user/repos?access_token=' + req.user.accessToken,
+      url: 'https://api.github.com/repos/repos?access_token=' + req.user.accessToken,
       headers: {
         'User-Agent': 'request'
       }
@@ -32,7 +32,7 @@ function build_router(passport) {
         message: 'deleted repository'
       })
     }
-    request(delete_repository_options, delete_repository_callback);
+    request.delete(delete_repository_options, delete_repository_callback);
   }
 
   function do_github_data(req, res) {
