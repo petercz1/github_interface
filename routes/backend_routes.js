@@ -20,7 +20,7 @@ function build_router(passport) {
     console.log('deleting repository...');
     console.log(req.params);
     var delete_repository_options = {
-      url: 'https://api.github.com/repos/repos?access_token=' + req.user.accessToken,
+      url: 'https://api.github.com/repos/:owner/:repo',
       headers: {
         'User-Agent': 'request'
       }
