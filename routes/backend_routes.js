@@ -25,16 +25,14 @@ function build_router(passport) {
         'User-Agent': 'request'
       }
     }
-    function callback(err, response, body) {
+    function delete_repository_callback(err, response, body) {
       if (err) console.log(err);
-      res.json(JSON.parse(body));
+      console.log(response);
+      res.json({
+        message: 'deleted repository'
+      })
     }
-    request(options, callback);
-
-    res.json({
-      message: 'deleted repository'
-    })
-    // TODO - delete rep from github!
+    request(delete_repository_options, delete_repository_callback);
   }
 
   function do_github_data(req, res) {
