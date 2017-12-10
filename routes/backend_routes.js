@@ -14,7 +14,7 @@ function build_router(passport) {
   // data---------------------------------------
   router.get('/api/v1/github_data', do_github_data);
   router.get('/api/v1/repositories', do_repositories);
-  router.delete('/api/v4/delete/:id', do_delete);
+  router.delete('/api/v1/delete/:id', do_delete);
 
   function do_delete(req, res) {
     console.log('deleting repository?');
@@ -25,9 +25,6 @@ function build_router(passport) {
   function do_github_data(req, res) {
     console.log('doing BE github data');
     console.log(req.user.id);
-    console.log(req.user.displayName);
-    console.log(req.user.username);
-    console.log(req.user.profileUrl);
 
     var options = {
       url: 'https://api.github.com/user/repos?access_token=' + req.user.accessToken,
@@ -59,13 +56,13 @@ function build_router(passport) {
       if (err) console.log(err);
       res.json(JSON.parse(body));
     }
-    
+
     request(options, callback);
   }
 
   // auth---------------------------------------
   router.get('/api/v1/auth', passport.authenticate('github', {
-    scope: ['user:email']
+    scope: ['user:email', 'user:delete_repo']
   }));
 
   router.get('/api/v1/git_callback',
