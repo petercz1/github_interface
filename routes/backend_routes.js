@@ -27,7 +27,7 @@ function build_router(passport) {
     }
     function delete_repository_callback(err, response, body) {
       if (err) console.log(err);
-      console.log(response);
+      //console.log(response);
       res.json({
         message: 'deleted repository'
       })
