@@ -35,7 +35,8 @@ function do_reps_controller($scope, $http){
     console.log('deleting...');
     console.log(rep);
     $http.delete('/api/v1/delete/' + rep.id).then(
-      function () {
+      function (response) {
+        console.log(response);
         do_reps_controller();
       }
     );
